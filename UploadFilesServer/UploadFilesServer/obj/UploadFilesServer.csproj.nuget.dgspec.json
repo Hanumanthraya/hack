@@ -1,23 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hanum\\source\\repos\\UploadFilesServer\\UploadFilesServer\\UploadFilesServer.csproj": {}
+    "C:\\Users\\hanum\\source\\repos\\hack\\UploadFilesServer\\UploadFilesServer\\UploadFilesServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hanum\\source\\repos\\UploadFilesServer\\UploadFilesServer\\UploadFilesServer.csproj": {
+    "C:\\Users\\hanum\\source\\repos\\hack\\UploadFilesServer\\UploadFilesServer\\UploadFilesServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hanum\\source\\repos\\UploadFilesServer\\UploadFilesServer\\UploadFilesServer.csproj",
+        "projectUniqueName": "C:\\Users\\hanum\\source\\repos\\hack\\UploadFilesServer\\UploadFilesServer\\UploadFilesServer.csproj",
         "projectName": "UploadFilesServer",
-        "projectPath": "C:\\Users\\hanum\\source\\repos\\UploadFilesServer\\UploadFilesServer\\UploadFilesServer.csproj",
+        "projectPath": "C:\\Users\\hanum\\source\\repos\\hack\\UploadFilesServer\\UploadFilesServer\\UploadFilesServer.csproj",
         "packagesPath": "C:\\Users\\hanum\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hanum\\source\\repos\\UploadFilesServer\\UploadFilesServer\\obj\\",
+        "outputPath": "C:\\Users\\hanum\\source\\repos\\hack\\UploadFilesServer\\UploadFilesServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\hanum\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -30,6 +33,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -41,10 +45,15 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Azure.Storage.Blobs": {
               "target": "Package",
               "version": "[12.12.0, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[6.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -69,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }

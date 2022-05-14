@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-
+using UploadFilesServer.Models;
 using UploadFilesServer.services;
 
 
@@ -24,17 +24,19 @@ namespace UploadFilesServer.Controllers
             this.uploadService = new UploadService(configuration) ?? throw new ArgumentNullException(nameof(uploadService));
         }
         [HttpPost(nameof(UploadFile))]
-        public async Task<IActionResult> UploadFile(IFormFile files)
+        public async Task<IActionResult> UploadFile([FromForm] AudioMetaData audioMetaData)
         {
             try
             {
                 
-                if (files.Length > 0)
+                if (audioMetaData.file.Length > 0)
                 {
-                    var fileName = files.FileName;
-                    string fileURL = await uploadService.UploadAsync(files.OpenReadStream(), fileName, files.ContentType);
-
-                    return Ok(new { fileURL });
+                    var fileName = audioMetaData.file.FileName;
+                    string blobName = await uploadService.UploadAsync(audioMetaData.file.OpenReadStream(), fileName, audioMetaData.file.ContentType);
+                    IConfigurationSection connectionStrings = Startup.ConnectionStrings;
+                    audioMetaData.blobUrl  =  String.Format(connectionStrings.GetSection("blobStorageUrl").Value + "recordvoice/" + blobName) ;
+                    string result = await uploadService.AddAudioMetaData(audioMetaData);
+                    return Ok(new { audioMetaData.blobUrl });
                 }
                 else
                 {
