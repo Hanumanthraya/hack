@@ -12,7 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using UploadFilesServer.services;
 using Swashbuckle.AspNetCore.SwaggerGen;
-
+using Microsoft.OpenApi.Models;
 
 namespace UploadFilesServer
 {
@@ -38,12 +38,12 @@ namespace UploadFilesServer
             services.AddSwaggerGen(options =>
             {
                 //options.DescribeAllEnumsAsStrings();
-                //options.SwaggerDoc("v1", new OpenApiInfo
-                //{
-                //    Title = "eShopOnContainers - Catalog HTTP API",
-                //    Version = "v1",
-                //    Description = "The Catalog Microservice HTTP API. This is a Data-Driven/CRUD microservice sample"
-                //});
+                options.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Record your name - upload to blob storage HTTP API",
+                    Version = "v1",
+                    Description = "The upload to blob storage Microservice HTTP API. This is a Data-Driven microservice "
+                });
             });
 
 

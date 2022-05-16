@@ -41,7 +41,7 @@ namespace UploadFilesServer.services
             userIdParam.Value = audioMetaData.userId;
             npgsqlParameters[0] = userIdParam;
 
-            NpgsqlParameter partnerIdParam = new NpgsqlParameter("partnerid", NpgsqlDbType.Integer);
+            NpgsqlParameter partnerIdParam = new NpgsqlParameter("partnerid", NpgsqlDbType.Varchar);
             partnerIdParam.Value = audioMetaData.partnerId;
             npgsqlParameters[1] = partnerIdParam;
 
